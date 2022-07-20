@@ -21,7 +21,12 @@ const OptionList = () => {
               style={{
                 border: "2px solid black",
                 padding: "20px",
-                margin: "10px"
+                margin: "10px",
+                height: "30px",
+                width: "60px",
+                display: "flex",
+                justifyContent: "center",
+                cursor: "context-menu"
               }}
             >
               <h3 style={{margin: "auto"}}>{item.option}</h3>
