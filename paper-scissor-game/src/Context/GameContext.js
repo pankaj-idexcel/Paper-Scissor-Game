@@ -9,7 +9,7 @@ export const GameDataProvider = ({ children }) => {
   const [computerSelectedOpt, setComputerSelectedOpt] = useState("");
   const [userWins, setUserWins] = useState(0);
   const [computerWins, setComputerWins] = useState(0);
-  const [rounds, setrounds] = useState(3)
+  const rounds = 3
   const [count, setcount] = useState(0)
 
   useEffect(() => {

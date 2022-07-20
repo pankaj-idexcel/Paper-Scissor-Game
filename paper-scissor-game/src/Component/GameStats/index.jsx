@@ -1,5 +1,5 @@
 import React from "react";
-import { GameDataContext, memo } from "../../Context/GameContext";
+import { GameDataContext} from "../../Context/GameContext";
 
 
 const GameStats = () => {
