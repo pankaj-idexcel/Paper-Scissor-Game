@@ -1,0 +1,7 @@
+{
+    "options": [
+        {"option": "rock", "id": 111},
+        {"option": "paper", "id": 112},
+        {"option": "scissor", "id": 113}
+    ]
+}
