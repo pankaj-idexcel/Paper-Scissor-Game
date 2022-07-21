@@ -39,20 +39,24 @@ export const GameDataProvider = ({ children }) => {
   const result = (userSelectedOpt, computerSelectedOpt) => {
     const value = userSelectedOpt + computerSelectedOpt;
     if (count < rounds) {
-      if (
-        value === "paperrock" ||
-        value === "rockscissor" ||
-        value === "scissorpaper"
-      ) {
-        setUserWins(userWins + 1);
-        setcount((prev) => prev + 1);
-      } else if (
-        value === "rockpaper" ||
-        value === "scissorrock" ||
-        value === "paperscissor"
-      ) {
-        setComputerWins(computerWins + 1);
-        setcount((prev) => prev + 1);
+      switch (value) {
+        case "paperrock":
+        case "rockscissor":
+        case "scissorpaper": {
+          setUserWins(userWins + 1);
+          setcount((prev) => prev + 1);
+          break;
+        }
+        case "rockpaper":
+        case "scissorrock":
+        case "paperscissor": {
+          setComputerWins(computerWins + 1);
+          setcount((prev) => prev + 1);
+          break;
+        }
+
+        default:
+          break;
       }
     }
   };
