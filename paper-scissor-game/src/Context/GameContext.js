@@ -12,6 +12,7 @@ export const GameDataProvider = ({ children }) => {
   const [computerWins, setComputerWins] = useState(0);
   const rounds = 3;
   const [count, setcount] = useState(0);
+  const [prevValue, setPrevValue] = useState("");
 
   useEffect(() => {
     axiosInstance.get("/options").then((res) => {
@@ -24,10 +25,10 @@ export const GameDataProvider = ({ children }) => {
   }, [userSelectedOpt, computerSelectedOpt]);
 
   const handleOption = (selectedOption) => {
-    const randomValues =
-      options[Math.floor(Math.random() * options.length)].option;
+    const randomValues = options[Math.floor(Math.random() * options.length)].option;
+    setPrevValue(randomValues)
     if (count < rounds) {
-      if (selectedOption === randomValues) {
+      if (selectedOption === randomValues || prevValue===randomValues) {
         handleOption(selectedOption);
       } else {
         setUserSelectedOpt(selectedOption);
@@ -60,6 +61,7 @@ export const GameDataProvider = ({ children }) => {
     }
   };
 
+  
   return (
     <GameDataContext.Provider
       value={{
