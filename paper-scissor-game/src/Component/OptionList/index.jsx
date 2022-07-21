@@ -1,10 +1,11 @@
 import React from "react";
 import { GameDataContext } from "../../Context/GameContext";
+import PropTypes from 'prop-types'
 
 const OptionList = () => {
   return (
     <GameDataContext.Consumer>
-      {({ option, handleOption }) => (
+      {({ options, handleOption }) => (
         <div
           style={{
             display: "flex",
@@ -12,7 +13,7 @@ const OptionList = () => {
             marginTop: "200px",
           }}
         >
-          {option.map((item) => (
+          {options.map((item) => (
             <div
               key={item.id}
               onClick={() => {
@@ -37,5 +38,13 @@ const OptionList = () => {
     </GameDataContext.Consumer>
   );
 };
+
+OptionList.propTypes ={
+  options: PropTypes.shape({
+    option: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired
+  }),
+  handleOption: PropTypes.func
+}
 
 export default OptionList;
