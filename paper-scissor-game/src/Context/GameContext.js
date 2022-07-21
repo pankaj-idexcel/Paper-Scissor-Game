@@ -23,7 +23,7 @@ export const GameDataProvider = ({ children }) => {
     result(userSelectedOpt, computerSelectedOpt);
   }, [userSelectedOpt, computerSelectedOpt]);
 
-  const handleOption = async (selectedOption) => {
+  const handleOption = (selectedOption) => {
     const randomValues =
       options[Math.floor(Math.random() * options.length)].option;
     if (count < rounds) {
