@@ -54,7 +54,6 @@ export const GameDataProvider = ({ children }) => {
           setcount((prev) => prev + 1);
           break;
         }
-
         default:
           break;
       }
