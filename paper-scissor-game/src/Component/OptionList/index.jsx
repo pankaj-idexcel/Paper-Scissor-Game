@@ -1,6 +1,6 @@
 import React from "react";
 import { GameDataContext } from "../../Context/GameContext";
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
 const OptionList = () => {
   return (
@@ -27,10 +27,10 @@ const OptionList = () => {
                 width: "60px",
                 display: "flex",
                 justifyContent: "center",
-                cursor: "context-menu"
+                cursor: "context-menu",
               }}
             >
-              <h3 style={{margin: "auto"}}>{item.option}</h3>
+              <h3 style={{ margin: "auto" }}>{item.option}</h3>
             </div>
           ))}
         </div>
@@ -39,12 +39,12 @@ const OptionList = () => {
   );
 };
 
-OptionList.propTypes ={
+OptionList.propTypes = {
   options: PropTypes.shape({
     option: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired
+    id: PropTypes.number.isRequired,
   }),
-  handleOption: PropTypes.func
-}
+  handleOption: PropTypes.func,
+};
 
 export default OptionList;
