@@ -10,9 +10,9 @@ export const GameDataProvider = ({ children }) => {
   const [computerSelectedOpt, setComputerSelectedOpt] = useState("");
   const [userWins, setUserWins] = useState(0);
   const [computerWins, setComputerWins] = useState(0);
-  const rounds = 3;
   const [count, setcount] = useState(0);
   const [prevValue, setPrevValue] = useState("");
+  const rounds = 3;
 
   useEffect(() => {
     axiosInstance.get("/options").then((res) => {
@@ -38,9 +38,9 @@ export const GameDataProvider = ({ children }) => {
   };
 
   const result = (userSelectedOpt, computerSelectedOpt) => {
-    const value = userSelectedOpt + computerSelectedOpt;
+    const combinedValue = userSelectedOpt + computerSelectedOpt;
     if (count < rounds) {
-      switch (value) {
+      switch (combinedValue) {
         case "paperrock":
         case "rockscissor":
         case "scissorpaper": {
